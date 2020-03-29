@@ -17,7 +17,6 @@ body{
     background-position: center;
     background-size: cover;
 }
-
 .navbar-brand img
 {
     height: 120px;
@@ -29,16 +28,26 @@ body{
     height: 10%;
 }
 
+.navbar-nav.mr-auto li 
+{
+    padding:0 5px;
+}
+
 .navbar-nav.mr-auto li a
 {
     color: white;
-    text-decoration: none;
     font-family: "Raleway", sans-serif;
     font-size: 22px;
     font-style: bold;
     display: inline-block;
-    border-bottom: 4px solid;
+    border-bottom: 1px solid;
     border-color: transparent;
+}
+
+.navbar-nav.mr-auto li.active a 
+{
+    border-image: linear-gradient(90deg, #00ccff 33.33%, #001eff 33.33% 66.66%,  #ff0000 66.66% 100%);
+    border-image-slice: 1;
 }
 
 .nav.navbar-nav li a
@@ -57,7 +66,8 @@ body{
 }
 
 .navbar-nav.mr-auto li a:hover{
-    border-color: royalblue;
+    border-image: linear-gradient(90deg, #00ccff 33.33%, #001eff 33.33% 66.66%,  #ff0000 66.66% 100%);
+    border-image-slice: 1;
 }
 
 .navbar-nav.mr-auto{
@@ -78,4 +88,129 @@ body{
         height: fit-content;
         background-color: rgba(0, 0, 0, 0.5);
     }
+}
+
+#loginbutton, #signupbutton
+{
+    margin:10px;
+    border-radius: 8px;
+    background-color:transparent;
+    width:90px;
+    height: 45px;
+    border-color: transparent;
+    font-family: "Raleway", sans-serif;
+    color:white;
+    -webkit-transition: all 0.4s ease-out;
+   -moz-transition: all 0.4s ease-out;
+   -o-transition: all 0.4s ease-out;
+   -ms-transition: all 0.4s ease-out;
+   transition: all 0.4s ease-out;
+}
+
+#loginbutton:hover, #signupbutton:hover
+{
+   cursor: pointer;
+   background-color: rgba(0, 0, 0, 0.5);
+   transition: background-color 0.4s ease;
+}
+
+.modal-body
+{
+    text-align: center!important;
+}
+
+.modal-backdrop
+{
+    z-index:-1!important;
+}
+
+.modal-content
+{
+    color:white!important;
+}
+
+.form-control
+{
+    background-color: rgb(24, 24, 24, 0.4)!important;
+
+    border-color: transparent!important;
+}
+
+.form-group
+{
+    display: block;
+    text-align: center;
+}
+
+.form-group label
+{
+    display: block;
+}
+
+.form-group i
+{
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+input
+{
+    color:white!important;
+    width: 250px!important;
+    margin-left:28%!important;
+    text-align: center!important;
+}
+
+::placeholder {
+    color: white!important;
+    opacity: 1!important;
+    text-align: center!important;
+  }
+
+button.close
+{
+    color: white!important;
+    opacity: 1!important;
+    margin-right: 3%!important;
+}
+
+.modal-header h2
+{
+    margin-left: 41%;
+}
+
+
+.modal-content
+{
+    margin-left: -10%;
+    height: 610px;
+    width: 600px!important;
+    border-radius: 20px!important;
+    margin-top: 15%;
+}
+
+#loginmodalbutton
+{
+    margin-top: 26.5%;
+    margin-left: 1%;
+    width: 80px;
+    height: 35px;
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+    display: inline-block!important;
+    text-align: center!important; 
+    border-radius: 5px;
+}
+
+#loginmodalbutton:hover
+{
+    background-color: 	rgb(88, 2, 8);
+}
+
+button:focus{outline:0!important;}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    box-shadow: none !important;
 }
