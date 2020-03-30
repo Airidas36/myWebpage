@@ -18,9 +18,13 @@
 
 $(function() {
     $('#loginmodalbutton').hover(function() {
-      $('.modal-content.card.card-image').css('filter', 'grayscale(0%)');
+      $('.modal-body').css('backdrop-filter', 'blur(0px) grayscale(0%)');
+      $('.modal-body').css('-webkit-backdrop-filter', 'blur(0px) grayscale(0%)');
+
     }, function() {
       // on mouseout, reset the background colour
-      $('.modal-content.card.card-image').css('filter', 'grayscale(100%)');
+      $('.modal-body').css('backdrop-filter', 'blur(5px) grayscale(100%)');
+      $('.modal-body').css('-webkit-backdrop-filter', 'blur(5px) grayscale(100%)');
+
     });
   });
