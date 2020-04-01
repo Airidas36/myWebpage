@@ -22,12 +22,17 @@ body{
     height: 120px;
     margin-left:30%;
 }
+.carousel
+{
+    margin-top: -4.1rem;
+    z-index: -1!important;
+}
 .navbar
 {
     background-color:rgba(0, 0, 0, 0.5);
-    height: 10%;
+    height: 4rem;
+    margin-top: auto;
 }
-
 .navbar-nav.mr-auto li 
 {
     padding:0 5px;
@@ -80,13 +85,24 @@ body{
 .carousel-control-next:hover{
     cursor: pointer;
 }
-
 @media all and (max-width:1200px)
 {
     .navbar{
         width: fit-content;
         height: fit-content;
         background-color: rgba(0, 0, 0, 0.5);
+        position: absolute!important;
+        z-index: 100!important;
+        padding-top: 70px!important; 
+        margin-top: auto;
+    }
+    .html{
+        padding-bottom: 100px!important;
+    }   
+    .carousel-item
+    {
+        min-height: 200vh;
+        background-size: cover;
     }
 }
 
@@ -181,7 +197,7 @@ button.close
 }
 
 
-.modal-content
+#loginform
 {
     margin-left: -10%;
     height: 610px;
@@ -215,9 +231,21 @@ button:focus{outline:0!important;}
     box-shadow: none !important;
 }
 
-.modal-body
+#loginbody
 {
     transition: 2s all;
     -webkit-backdrop-filter: blur(5px) grayscale(100%);
     backdrop-filter: blur(5px) grayscale(100%);
+}
+
+#signupform
+{
+    height: 30rem;
+}
+
+.eee {
+    position: absolute;
+    top: 20%;
+    margin-left:30%;
+        color: #FFF;
 }
