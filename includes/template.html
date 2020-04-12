@@ -1,0 +1,112 @@
+
+    <nav class="navbar navbar-expand-xl">
+        <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <a class="navbar-brand" href="index.html"><img src="img/bmw_logo.png"></a>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html"> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html"> History</a></li>
+                <li class="nav-item"><a class="nav-link" href="cars.html"> Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="motorbikes.html"> Motorbikes</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <button type="button" data-toggle="modal" data-target="#loginModal" id="loginbutton"> LOGIN </button>
+                <button type="button" data-toggle="modal" data-target="#signupModal" id="signupbutton"> SIGN UP</button>
+            </ul>
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content " id="loginform"
+                        style="background-image: url('img/bmw_login.jpg'); background-size: 230%;background-position: center;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="loginhead" key="report_title">LOGIN</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="loginbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id=loginpass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" key="submit" id=loginmodalbutton>LOGIN</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="signupform"
+                        style="background-image: url(img/bmw_signup.jpg); background-position: center; background-size: 190%;">
+                        <div class="modal-header" id="signuphead">
+                            <h2 class="modal-title" key="report_title">SIGN UP</h2>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body" id="signupbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email
+                                        address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id="signupusername">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="input_username" key="label_username"> Enter your email
+                                        address</label>
+                                    <input type="text" class="form-control" id="input_username"
+                                        aria-describedby="usernameHelp" data-translate="username_placeholder"
+                                        placeholder="Enter username" key="username" required>
+                                    <div class="invalid-feedback" key="invalid_username">
+                                        Please enter a username
+                                    </div>
+                                </div>
+                                <div class="form-group" id=signuppass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your
+                                        password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" id="signupmodalbutton" key="modalsignup">
+                                    Create
+                                    Account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
