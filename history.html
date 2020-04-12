@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="includes/parallax.js-1.5.0/parallax.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
+    <script src="includes/script.js"></script>
+    <script src="includes/locale.js"></script>
+</head>
+
+<body id="history">
+    <nav class="navbar navbar-expand-xl">
+        <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <a class="navbar-brand" href="index.html"><img src="img/bmw_logo.png"></a>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html" key="home"> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html" key="history"> History</a></li>
+                <li class="nav-item"><a class="nav-link" href="cars.html" key="cars"> Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="brick.html" key="brick"> Brick</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <button type="button" data-toggle="modal" data-target="#loginModal" id="loginbutton" key="login"> LOGIN </button>
+                <button type="button" data-toggle="modal" data-target="#signupModal" id="signupbutton" key="signup"> SIGN UP</button>
+            </ul>
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content " id="loginform"
+                        style="background-image: url('img/bmw_login.jpg'); background-size: 230%;background-position: center;">
+                        <div class="modal-header">
+                            <h2 class="col-12 modal-title text-center" id="loginhead" key="login">LOGIN
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </h2>
+                        </div>
+                        <div class="modal-body" id="loginbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id=loginpass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" key="login" id=loginmodalbutton>LOGIN</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="signupform"
+                        style="background-image: url(img/bmw_signup.jpg); background-position: center; background-size: 190%;">
+                        <div class="modal-header" id="signuphead">
+                            <h2 class="col-12 modal-title text-center" key="signup">SIGN UP
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden='true'>&times;</span></button>
+                            </h2>
+                        </div>
+                        <div class="modal-body" id="signupbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id="signupusername">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="input_username" key="label_username"> Enter your username</label>
+                                    <input type="text" class="form-control" id="input_username"
+                                        aria-describedby="usernameHelp" data-translate="username_placeholder"
+                                        placeholder="Enter username" key="username" required>
+                                    <div class="invalid-feedback" key="invalid_username">
+                                        Please enter a username
+                                    </div>
+                                </div>
+                                <div class="form-group" id=signuppass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your
+                                        password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" id="signupmodalbutton" key="signup">
+                                    Create
+                                    Account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="parallax-window" data-parallax="scroll" data-bleed="410" data-image-src="img/bmw_507.jpg"></div>
+    <section class="slide" id="firstslide">
+        <h1 class="story-year"> 1916 </h1>
+        <h3 class="story-title" key="title_1"> BMW is born.</h3>
+        <h4 class="story-description" key="desc_1">BMW traces its roots back to Karl Rapp and Gustav Otto.
+            In 1916, a company <br> known as Flugmaschinenfabrik Gustav Otto
+            merged into Bayerische Flugzeug-Werke AG (BFW) <br> at the German
+            government's behest. Elsewhere, in 1917, the <br> Rapp Motorenwerke
+            company morphed into Bayerische Motoren Werke GmbH, <br> which duly
+            became an AG (public limited company) in 1918.
+            BMW AG <br> subsequently transferred its engine construction
+            operations – including <br>the company and brand names – to
+            BFW in 1922. The date of BFW's <br> founding, 7 March 1916, has
+            therefore gone down in history as the <br> birthdate
+            of Bayerische Motoren Werke AG.</h4>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-bleed="315" data-positionY="100px 20px"
+        data-image-src="img/bmw_r32_1923.jpg"></div>
+    <section class="slide" id="secondslide">
+        <h1 class="story-year">1923</h1>
+        <h3 class="story-title" key = "title_2">The BMW R32 - The first BMW Motorcycle.</h3>
+        <h4 class="story-description" key="desc_2"> BMW revealed its first motorcycle, the R 32, in 1923. Up to then, the company had
+            only built <br>
+            engines rather than complete vehicles. The basic concept behind the original BMW Motorrad model – a boxer
+            engine with <br>
+            longitudinally-positioned cylinders and cardan-shaft drive – was so sound that it remains a fixture of the
+            <br>
+            company's motorcycle line-up to this day.
+        </h4>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-bleed="295" data-positionY="100px 20px"
+        data-image-src="img/bmw_501.jpg"></div>
+    <section class="slide" id="thirdslide">
+        <h1 class="story-year">1951</h1>
+        <h3 class="story-title" key="title_3"> The BMW 501. The First post-war BMW car. </h3>
+        <h4 class="story-description" key="desc_3">
+            BMW's first post-war car was the 501, built from 1952. A large sedan capable of seating up to six people,
+            <br>
+            it was powered by an evolution of the six-cylinder engine used in the pre-war BMW 326. Although not a <br>
+            commercial success, this luxury model restored BMW's status as a manufacturer of high-quality, technically
+            exciting cars.
+        </h4>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-bleed="335" data-positionY="100px 20px"
+        data-image-src="img/bmw_e9_csl.jpg"></div>
+    <section class="slide" id="fourthslide">
+        <h1 class="story-year">1972</h1>
+        <h3 class="story-title" key="title_4">First racing project.</h3>
+        <h4 class="story-description" key = "desc_4">
+            Introduced in May 1972, the 3.0 CSL was a homologation special <br>
+            built to make the car eligible for racing in the European Touring Car Championship.<br>
+            1,265 were built.
+            It was developed by a separate division in BMW AG which would later <br>
+            become BMW Motorsport GmbH. While the CSL does not carry the M badge many <br>
+            consider this as the first ever M car and one that first carried the tri colour motorsport livery.
+        </h4>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-bleed="370" data-positionY="100px 20px"
+        data-image-src="img/bmw_m1.jpg"></div>
+    <section class="slide" id="fifthslide">
+        <h1 class="story-year">1978</h1>
+        <h3 class="story-title" key="title_5"> The M1.</h3>
+        <h4 class="story-description" key="desc_5">
+            In the late 1970s, Italian automobile manufacturer Lamborghini entered into an agreement with BMW to
+            build<br>
+            a production racing car in sufficient quantity for homologation, but conflicts arose that prompted BMW to
+            produce<br>
+            the car themselves. The M1 coupé was hand-built between 1978 and 1981 under the motorsport division of BMW
+            as a <br>
+            homologation special for sports car racing. The fibre glass body was designed by Giorgetto Giugiaro, taking
+            <br>
+            inspiration from the 1972 BMW Turbo concept car. Since the engineering of the car was still incomplete, a
+            group<br>
+            of former Lamborghini engineers had founded a company named Italengineering which offered to complete the
+            car's<br>
+            design. Less than 10 miles away from the Lamborghini shop, the engineering for the M1 was finished.
+        </h4>
+    </section>
+    <footer class="page-footer font-small fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="www.github.com/Airidas36"> Airidas Šarkūnas</a>
+            <button class="lang-btn" id="lt">LT</button>
+            <button class="lang-btn" id="en">EN</button>
+        </div>
+    </footer>
+</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="includes/parallax.js-1.5.0/parallax.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
+    <script src="includes/script.js"></script>
+    <script src="includes/locale.js"></script>
+</head>
+
+<body id="cars">
+    <nav class="navbar navbar-expand-xl">
+        <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <a class="navbar-brand" href="index.html"><img src="img/bmw_logo.png"></a>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html" key="home"> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html" key="history"> History</a></li>
+                <li class="nav-item"><a class="nav-link" href="cars.html" key="cars"> Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="brick.html" key="brick"> Brick</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <button type="button" data-toggle="modal" data-target="#loginModal" id="loginbutton" key="login"> LOGIN </button>
+                <button type="button" data-toggle="modal" data-target="#signupModal" id="signupbutton" key="signup"> SIGN UP</button>
+            </ul>
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content " id="loginform"
+                        style="background-image: url('img/bmw_login.jpg'); background-size: 230%;background-position: center;">
+                        <div class="modal-header">
+                            <h2 class="col-12 modal-title text-center" id="loginhead" key="login">LOGIN
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </h2>
+                        </div>
+                        <div class="modal-body" id="loginbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id=loginpass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" key="login" id=loginmodalbutton>LOGIN</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="signupform"
+                        style="background-image: url(img/bmw_signup.jpg); background-position: center; background-size: 190%;">
+                        <div class="modal-header" id="signuphead">
+                            <h2 class="col-12 modal-title text-center" key="signup">SIGN UP
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden='true'>&times;</span></button>
+                            </h2>
+                        </div>
+                        <div class="modal-body" id="signupbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id="signupusername">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="input_username" key="label_username"> Enter your username</label>
+                                    <input type="text" class="form-control" id="input_username"
+                                        aria-describedby="usernameHelp" data-translate="username_placeholder"
+                                        placeholder="Enter username" key="username" required>
+                                    <div class="invalid-feedback" key="invalid_username">
+                                        Please enter a username
+                                    </div>
+                                </div>
+                                <div class="form-group" id=signuppass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your
+                                        password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" id="signupmodalbutton" key="signup">
+                                    Create
+                                    Account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+    <div class="ParallaxImage bg1">
+        <div class="container">
+            <h1 style="margin-left:20%!important; margin-top: 5%!important; position: absolute;">BMW 3-Series</h1>
+        </div>
+    </div>
+    <div class="ParallaxContent" style="height: 150px; padding-top: 20px;" id=cont1>
+        <div class="container">
+            <div class="headlines" id="firstslide">
+                <h3 class="story-title" style="text-align: center;">The BMW 3 Series is a compact executive 
+                    car manufactured by the German automaker BMW since May 1975. 
+                    It is the successor to the 02 Series and has been produced 
+                    in seven different generations.</h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxImage bg2"></div>
+    <div class="ParallaxContent" style="height: 300px;" id="cont2">
+        <div class="container">
+            <div class="headlines" id="secondslide">
+                <h1 class="story-year"> 1975–1983 </h1>
+                <h3 class="story-title">E21.</h4>
+                <h4 class="story-description">
+                    The E21 replaced the 02 Series and was initially available as a 2-door sedan <br>
+                    (also described as coupé) At launch, all models used carburetted 4-cylinder engines, <br>
+                    however fuel injected models were introduced in late 1975 and 6-cylinder engines were added<br>
+                     in 1977. A cabriolet body style – manufactured by Baur – was available from 1978 to 1981.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxVideo" id="e30">
+        <video autoplay muted loop>
+            <source src="C:\Users\Airidas\Documents\GitHub\myWebpage\img\e30_vid.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="ParallaxContent" style="height: 270px;" id=cont3>
+        <div class="container">
+            <div class="headlines" id="thirdslide">
+                <h1 class="story-year"> 1982–1994 </h1>
+                <h3 class="story-title">E30.</h4>
+                <h4 class="story-description">
+                    On introduction in 1982, the E30 was produced solely in the 2-door sedan body style. The E30 was the first 3 Series to be available in<br>
+                    wagon and 4-door sedan body styles. It was also the first 3 Series to offer a diesel engine, and all-wheel drive was introduced to the 3 Series range with <br>
+                    the 325iX model. The BMW Z1 roadster was based on the E30 platform. The first BMW M3 was built on the E30 platform. The E30 M3 is powered by the high-revving S14
+                    four-cylinder petrol engine, which produced 175 kW (235 hp) in its final European-only iteration.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxVideo" id="e36">
+        <video autoplay muted loop>
+            <source src="C:\Users\Airidas\Documents\GitHub\myWebpage\img\e36_vid.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="ParallaxContent" id="cont4">
+        <div class="container">
+            <div class="headlines" id="fourthslide">
+                <h1 class="story-year"> 1990-2000 </h1>
+                <h3 class="story-title">E36.</h4>
+                <h4 class="story-description">
+                    The E36 was the first 3 Series to be offered in a hatchback body style. It was also the first 3 Series to be available with<br>
+                    a 6-speed manual transmission (in the 1996 M3), a 5-speed automatic transmission and a four-cylinder diesel engine. The multi-link <br>
+                    rear suspension was also a significant upgrade compared with previous generations of the 3 Series. The E36 was named in Car and Driver Magazine's<br>
+                    10Best list for every year it was on sale. The M3 model is powered by the S50 and S52 straight-six engines. It was sold in coupe, sedan<br>
+                    and convertible body styles. The BMW Z3 roadster and coupe models were based on the E36 platform.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxImage bg3"></div>
+    <div class="ParallaxContent" id="cont5">
+        <div class="container">
+            <div class="headlines" id="fifthslide">
+                <h1 class="story-year"> 1997-2004 </h1>
+                <h3 class="story-title">E46.</h4>
+                <h4 class="story-description">
+                    All-wheel drive, last available in the E30 3 Series, was reintroduced for the E46 on the 325xi, 330xi and 330xd models. 
+                    The E46 was  the first 3 Series to be available with an engine using Valvetronic (variable valve lift). 
+                    Various electronic features were also introduced to the 3 Series in the E46 generation, including satellite navigation,
+                    electronic brake-force distribution, rain-sensing wipers and LED tail-lights. Following the introduction of the E90 3 
+                    Series sedans in late 2004, the E46 began to be phased out.However the E46 coupé and convertible body styles remained 
+                    in production until 2006.The E46 M3 is powered by the S54 straight-six engine with either a 6-speed manual or a 6-speed
+                    SMG-II automated manual transmission. The M3 was introduced in late 2000 and wasproduced in coupé and convertible body styles only.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxVideo" id="e90">
+        <video autoplay muted loop>
+            <source src="C:\Users\Airidas\Documents\GitHub\myWebpage\img\e90_vid.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="ParallaxContent" id="cont6">
+        <div class="container">
+            <div class="headlines" id="sixthslide">
+                <h1 class="story-year"> 2004-2013</h1>
+                <h3 class="story-title">E90/E91/E92/E93.</h4>
+                <h4 class="story-description">
+                    The E9x was the first 3 Series sold with a turbocharged petrol engine. The E9x family also saw the introduction of run-flat tyres to the 3 Series range. Cars with run-flats are not equipped with a spare tyre.
+                    The E90/E92/E93 M3 is the only generation of M3 to be powered by a V8 engine. Introduced in 2007, it uses the BMW S65 naturally aspirated V8 engine and was produced in sedan, coupe and convertible body styles.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxImage bg4 animated"></div>
+    <div class="ParallaxContent" id="cont7">
+        <div class="container">
+            <div class="headlines" id="seventhslide">
+                <h1 class="story-year"> 2011-2019 </h1>
+                <h3 class="story-title">F30/F31/F34.</h4>
+                <h4 class="story-description">
+                    The F30 is the first generation of 3 Series to be powered by a range of turbocharged engines exclusively and electric power steering (replacing the hydraulic power steering systems used previously).[1] The F30 also marked the 3 Series' first use of a three-cylinder engine in its 2015 facelift. A new plug-in hybrid F30 model was also introduced in 2016.[2] A long-wheelbase sedan version (model code F35) was sold in China.
+                    The M3 model (designated F80) was introduced in 2014 and is powered by the S55 twin-turbocharged straight-six engine.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="ParallaxImage bg5"></div>
+    <div class="ParallaxContent" style="padding-bottom: 50px;" id="cont8">
+        <div class="container">
+            <div class="headlines" id="eightslide">
+                <h1 class="story-year"> 2019-present </h1>
+                <h3 class="story-title">G20/G21.</h4>
+                <h4 class="story-description">
+                    The G20 was unveiled at the 2018 Paris Motor Show on October 2, 2018, and released in March 2019.
+                    The M340i, one of the first models in the range became available for sale in the spring of 2019, 
+                    with the 330e hybrid model scheduled for launch in 2020. The 3 Series Gran Turismo fastback body
+                     style was discontinued for the G20 generation.
+                </h4>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="page-footer font-small fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="www.github.com/Airidas36"> Airidas Šarkūnas</a>
+            <button class="lang-btn" id="lt">LT</button>
+            <button class="lang-btn" id="en">EN</button>
+        </div>
+    </footer>
+</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+</html>

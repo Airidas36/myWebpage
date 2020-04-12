@@ -8,9 +8,10 @@
     <meta name="viewport" , content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
+    <script src="includes/locale.js"></script>
 </head>
 
-<body>
+<body id="home">
     <nav class="navbar navbar-expand-xl">
         <div class="navbar-header">
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
@@ -20,25 +21,26 @@
         <div class="collapse navbar-collapse" id="collapse_target">
             <a class="navbar-brand" href="index.html"><img src="img/bmw_logo.png"></a>
             <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" href="#"> Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Cars</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Motorbikes</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html" key="home"> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html" key="history"> History</a></li>
+                <li class="nav-item"><a class="nav-link" href="cars.html" key="cars"> Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="brick.html" key="brick"> Brick</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <button type="button" data-toggle="modal" data-target="#loginModal" id="loginbutton"> LOGIN </button>
-                <button type="button" data-toggle="modal" data-target="#signupModal" id="signupbutton"> SIGN UP</button>
+                <button type="button" data-toggle="modal" data-target="#loginModal" id="loginbutton" key="login"> LOGIN </button>
+                <button type="button" data-toggle="modal" data-target="#signupModal" id="signupbutton" key="signup"> SIGN UP</button>
             </ul>
             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content card card-image" id="loginform"
+                    <div class="modal-content " id="loginform"
                         style="background-image: url('img/bmw_login.jpg'); background-size: 230%;background-position: center;">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="exampleModalLabel" key="report_title">LOGIN</h2>
+                            <h2 class="col-12 modal-title text-center" id="loginhead" key="login">LOGIN
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                <span aria-hidden='true'>&times;</span>
                             </button>
+                        </h2>
                         </div>
                         <div class="modal-body" id="loginbody">
                             <form class="needs-validation" novalidate>
@@ -62,62 +64,77 @@
                                         Please enter a password
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn" key="submit" id=loginmodalbutton>LOGIN</button>
+                                <button type="submit" class="btn btn" key="login" id=loginmodalbutton>LOGIN</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" role="dialog" id="signupModal">
-                <div class="modal-dialog">
-                    <div class="modal-content card card-image" id="signupform"
-                        style="background-image: url(img/bmw_signup.jpg); background-position: center; background-size: 100%;">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="signupform"
+                        style="background-image: url(img/bmw_signup.jpg); background-position: center; background-size: 190%;">
+                        <div class="modal-header" id="signuphead">
+                            <h2 class="col-12 modal-title text-center" key="signup">SIGN UP
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden='true'>&times;</span></button>
+                            </h2>
                         </div>
                         <div class="modal-body" id="signupbody">
-                            <div class="form-group">
-                                <input type="text" data-translate="email_placeholder" name="email" class="form-control"
-                                    placeholder="Email" key="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="username" data-translate="username_placeholder" name="username"
-                                    class="form-control" placeholder="Username" key="username">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" data-translate="password_placeholder" name="password"
-                                    class="form-control" placeholder="Password" key="password">
-                            </div>
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id="signupusername">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="input_username" key="label_username"> Enter your username</label>
+                                    <input type="text" class="form-control" id="input_username"
+                                        aria-describedby="usernameHelp" data-translate="username_placeholder"
+                                        placeholder="Enter username" key="username" required>
+                                    <div class="invalid-feedback" key="invalid_username">
+                                        Please enter a username
+                                    </div>
+                                </div>
+                                <div class="form-group" id=signuppass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your
+                                        password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" id="signupmodalbutton" key="signup">
+                                    Create
+                                    Account</button>
+                            </form>
                         </div>
-                        <button type="submit" class="btn btn" id="modalsignup" key="modalsignup"> Create
-                            Account</button>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="7000">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active" style="background-image:url(img/bmw_m3.jpg)"></div>
-            <div class="carousel-item" style="background-image: url(img/bmw_moto.jpg);"></div>
-            <div class="carousel-item" style="background-image: url(img/bmw_e36.jpg);"></div>
+    <footer class="page-footer font-small fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="www.github.com/Airidas36"> Airidas Šarkūnas</a>
+            <button class="lang-btn" id="lt">LT</button>
+            <button class="lang-btn" id="en">EN</button>
         </div>
-        <div class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </div>
-        <div class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </div>
-    </div>
+    </footer>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
 
 </html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="includes/locale.js"></script>
+    <script src="includes/script.js"></script>
+    <script src="includes/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
+
+</head>
+
+<body id="plyta">
+    <nav class="navbar navbar-expand-xl">
+        <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <a class="navbar-brand" href="index.html"><img src="img/bmw_logo.png"></a>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html" key="home"> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html" key="history"> History</a></li>
+                <li class="nav-item"><a class="nav-link" href="cars.html" key="cars"> Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="brick.html" key="brick"> Brick</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <button type="button" data-toggle="modal" data-target="#loginModal" id="loginbutton" key="login"> LOGIN </button>
+                <button type="button" data-toggle="modal" data-target="#signupModal" id="signupbutton" key="signup"> SIGN UP</button>
+            </ul>
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content " id="loginform"
+                        style="background-image: url('img/bmw_login.jpg'); background-size: 230%;background-position: center;">
+                        <div class="modal-header">
+                            <h2 class="col-12 modal-title text-center" id="loginhead" key="login">LOGIN
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </h2>
+                        </div>
+                        <div class="modal-body" id="loginbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id=loginpass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" key="login" id=loginmodalbutton>LOGIN</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="signupform"
+                        style="background-image: url(img/bmw_signup.jpg); background-position: center; background-size: 190%;">
+                        <div class="modal-header" id="signuphead">
+                            <h2 class="col-12 modal-title text-center" key="signup">SIGN UP
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden='true'>&times;</span></button>
+                            </h2>
+                        </div>
+                        <div class="modal-body" id="signupbody">
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group" id="loginmail">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="exampleInputEmail1" key="label_email"> Enter your email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" data-translate="email_placeholder"
+                                        placeholder="Enter email" key="email" required>
+                                    <div class="invalid-feedback" key="invalid_email">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="form-group" id="signupusername">
+                                    <i class="fas fa-envelope"></i>
+                                    <label for="input_username" key="label_username"> Enter your username</label>
+                                    <input type="text" class="form-control" id="input_username"
+                                        aria-describedby="usernameHelp" data-translate="username_placeholder"
+                                        placeholder="Enter username" key="username" required>
+                                    <div class="invalid-feedback" key="invalid_username">
+                                        Please enter a username
+                                    </div>
+                                </div>
+                                <div class="form-group" id=signuppass>
+                                    <i class="fas fa-id-card"></i>
+                                    <label for="exampleInputPassword1" key="label_password">Enter your
+                                        password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        data-translate="password_placeholer" placeholder="Password" key="password"
+                                        required>
+                                    <div class="invalid-feedback" key="invalid_password">
+                                        Please enter a password
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn" id="signupmodalbutton" key="signup">
+                                    Create
+                                    Account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main id="brick">
+        <section>
+            <h1 key="kaista_plyta"> Are you tired of your M50/M52 overheating everyday? <br> Are you tired of your coolant hoses being blown away?</h1>
+            <button id="view" key="reveal_why"> Find out why your engine is overheating, NOW!</button>
+            <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+        </section>
+    </main>
+    <footer class="page-footer font-small fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="www.github.com/Airidas36"> Airidas Šarkūnas</a>
+            <button class="lang-btn" id="lt">LT</button>
+            <button class="lang-btn" id="en">EN</button>
+        </div>
+    </footer>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+</html>
