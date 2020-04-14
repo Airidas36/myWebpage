@@ -28,7 +28,8 @@ body#history
 
 body#cars
 {
-    overflow-x: hidden;
+    overflow-x: hidden;    
+    height: 100vh; 
 }
 body#plyta
 {
@@ -460,7 +461,7 @@ button:focus{outline:0!important;}
 .page-footer button
 {
     display: inline-block;
-    margin-left: 4%;
+    margin-left: 10px;
     background-color: transparent;
     color: white;
     border: none;
